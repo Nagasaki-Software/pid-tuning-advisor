@@ -1,0 +1,2 @@
+# bat は Windows 式の改行（CRLF）のまま保存する。LF になると日本語入りの bat が正しく動かない
+*.bat -text
