@@ -83,8 +83,8 @@ class SettingsDialog(QDialog):
         box.addWidget(label("計算のしかた", "sectionTitle"))
         card = Card()
         self.sp_response = QComboBox()
-        self.sp_response.addItem("すぐに動く（標準PID制御モード）", "bump")
-        self.sp_response.addItem("急には動かない（定値制御モード）", "bumpless")
+        self.sp_response.addItem("すぐに動く（PID 形）", "bump")
+        self.sp_response.addItem("急には動かない（I-PD 形）", "bumpless")
         self.d_on = QComboBox()
         self.d_on.addItem("測定値の変化にかける（PV微分型）", "pv")
         self.d_on.addItem("偏差の変化にかける（偏差微分型）", "error")
@@ -169,7 +169,7 @@ class SettingsDialog(QDialog):
         if editable:
             self.note.setText("値を変えて［保存］を押すと、このプロファイルに保存します。")
         else:
-            self.note.setText("初期値は、横河電機 UT35A / UT32A の取扱説明書（IM 05P01D31-01EN）の記載に合わせています。"
+            self.note.setText("一般的な調節計の値です（例：UT35A）。"
                               "別の調節計で使うときは、「複製して新規」で値を変えて保存します。")
 
     def _duplicate(self) -> None:

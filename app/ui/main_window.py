@@ -27,7 +27,7 @@ MIN_POINTS = 30
 SCENES = [("auto", "自動判定"), (diagnose.SP_CHANGE, "設定値の変更"),
           (diagnose.HUNTING, "温度の揺れ（ハンチング）"), (diagnose.MANUAL, "手動で出力を変更")]
 FOOTNOTE = ("提案は目安です。設定を変えたあとの記録でもう一度解析して、確かめてください。"
-            "水の流量やバルブ開度が大きく違う運転では、その条件の記録で解析し直してください。")
+            "流量や負荷、出力の大きさが大きく違う運転では、その条件の記録で解析し直してください。")
 
 
 def _plot(title_left: str) -> pg.PlotWidget:

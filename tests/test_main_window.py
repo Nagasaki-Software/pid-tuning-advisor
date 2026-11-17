@@ -32,7 +32,7 @@ def test_load_sample_and_analyze(qapp, tmp_path, samples, no_dialogs):
     w = _window(tmp_path)
     w.load_csv(str(samples[0]))
     assert w.btn_analyze.isEnabled() and "901 行・1 秒間隔" in w.file_label.text()
-    assert [w.col_combos[k].currentText() for k in ("time", "sp", "out", "pv")] == ["日時", "設定値", "出力", "水温"]
+    assert [w.col_combos[k].currentText() for k in ("time", "sp", "out", "pv")] == ["日時", "設定値", "出力", "温度"]
     assert len(w.curve_pv.getData()[0]) == 901 and "0 〜 900 秒" in w.region_label.text()
     w.btn_analyze.click()
     assert no_dialogs == []

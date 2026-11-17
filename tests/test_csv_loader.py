@@ -33,7 +33,7 @@ def test_basic_series(tmp_path):
 
 
 def test_recorder_style_preamble_and_unit_row(tmp_path):
-    text = "記録計 GM10\n開始,2026/11/14\n\n時刻,CH1,CH2,CH3\n,℃,%,℃\n10:00:00,60,40,60.1\n10:00:01,60,41,60.2\n10:00:02,60,42,60.3\n"
+    text = "記録計 A\n開始,2026/11/14\n\n時刻,CH1,CH2,CH3\n,℃,%,℃\n10:00:00,60,40,60.1\n10:00:01,60,41,60.2\n10:00:02,60,42,60.3\n"
     table = read_table(_write(tmp_path, text, "cp932"))
     assert table.headers == ["時刻", "CH1 ℃", "CH2 %", "CH3 ℃"]
     assert len(table.rows) == 3
@@ -126,7 +126,7 @@ def test_guess_columns():
 
 
 def test_description_rows_do_not_join_the_headers(tmp_path):
-    text = "記録計 GM10,,,\n開始,2026/11/14,,\n時刻,SP,OUT,PV\n10:00:00,60,40,60.1\n10:00:01,60,41,60.2\n10:00:02,60,42,60.3\n"
+    text = "記録計 A,,,\n開始,2026/11/14,,\n時刻,SP,OUT,PV\n10:00:00,60,40,60.1\n10:00:01,60,41,60.2\n10:00:02,60,42,60.3\n"
     table = read_table(_write(tmp_path, text, "cp932"))
     assert table.headers == ["時刻", "SP", "OUT", "PV"]
     assert guess_columns(table.headers) == {"time": 0, "sp": 1, "out": 2, "pv": 3}

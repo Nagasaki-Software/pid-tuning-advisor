@@ -12,9 +12,9 @@ from app import APP_DIR_NAME
 
 @dataclass(frozen=True)
 class ControllerProfile:
-    """初期値は横河電機 UT35A / UT32A（IM 05P01D31-01EN 第7版）。"""
+    """初期値は、一般的なディジタル指示調節計（例：UT35A）の値。"""
 
-    name: str = "UT35A / UT32A"
+    name: str = "標準"
     p_mode: str = "pb"          # "pb" 比例帯(%) / "gain" 比例ゲイン
     i_unit: str = "s"           # "s" 秒 / "min" 分 / "rpm" 回/分
     d_unit: str = "s"           # "s" 秒 / "min" 分

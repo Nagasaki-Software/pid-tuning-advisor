@@ -19,7 +19,7 @@ def write_sample(path: Path, record) -> None:
     t, sp, pv, out = record
     with open(path, "w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["日時", "設定値", "出力", "水温"])
+        w.writerow(["日時", "設定値", "出力", "温度"])
         for k in range(len(t)):
             stamp = (START + timedelta(seconds=float(t[k]))).strftime("%Y/%m/%d %H:%M:%S")
             w.writerow([stamp, f"{sp[k]:.1f}", f"{out[k]:.1f}", f"{pv[k]:.2f}"])

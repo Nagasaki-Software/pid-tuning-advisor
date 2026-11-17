@@ -107,8 +107,8 @@ def test_broken_profile_file_is_skipped(tmp_path):
 
 def test_settings_roundtrip(tmp_path):
     assert prof.load_settings(tmp_path) == {}
-    prof.save_settings({"profile": "UT35A / UT32A", "p": "10.0"}, tmp_path)
-    assert prof.load_settings(tmp_path) == {"profile": "UT35A / UT32A", "p": "10.0"}
+    prof.save_settings({"profile": "標準", "p": "10.0"}, tmp_path)
+    assert prof.load_settings(tmp_path) == {"profile": "標準", "p": "10.0"}
     (tmp_path / "settings.json").write_text("[1, 2]", encoding="utf-8")
     assert prof.load_settings(tmp_path) == {}
 
