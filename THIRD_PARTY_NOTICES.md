@@ -6,6 +6,19 @@
 
 このリポジトリのソースコードには、外部ライブラリのコードを含めていません。外部ライブラリは `pip install -r requirements.txt` でインストールされます。
 
+## EXE 版に含まれるもの
+
+EXE 版（`pid-tuning-advisor-v<版>-exe.zip`）は、PyInstaller で作っています。`_internal` フォルダに、下の表のライブラリと、次のものが入っています。
+
+| 部品 | ライセンス | 入手先 |
+|---|---|---|
+| PyInstaller の起動部分（bootloader） | GPL-2.0-or-later（作った EXE への例外条項つき） | https://pyinstaller.org |
+| OpenSSL（Python に付属） | Apache-2.0 | https://www.openssl.org |
+| libffi（Python に付属） | MIT | https://github.com/libffi/libffi |
+| Microsoft Visual C++ ランタイム（VCRUNTIME140） | Microsoft の再頒布条件 | https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist |
+
+EXE 版の元のコード（ソースコード）は、同じ Releases の `pid-tuning-advisor-v<版>.zip`、またはこのリポジトリにあります。
+
 ## 利用しているライブラリ
 
 版数は、動作を確認したときのものです。

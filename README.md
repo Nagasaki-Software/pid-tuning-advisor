@@ -31,18 +31,24 @@ P・I・D をどう直せばよいかを示す Windows アプリです。
 ## 動作環境
 
 - Windows 10 / 11（64bit）
-- Python 3.14（[python.org](https://www.python.org/downloads/windows/) からインストール）
-- インターネット接続は、セットアップのときだけ必要です
+- EXE 版：ほかに何も入れずに使えます
+- Python 版：Python 3.14（[python.org](https://www.python.org/downloads/windows/) からインストール）。インターネット接続はセットアップのときだけ必要です
 
 ## 入手と起動
 
-1. このページの右側の「Releases」から、`pid-tuning-advisor-v0.1.1.zip` をダウンロードします。
-   緑色の「Code」ボタンの「Download ZIP」と、「Source code (zip)」は開発用です。選ばないでください。
-2. zip を右クリック →「プロパティ」で、下のほうの「許可する」にチェックを入れて「OK」を押します。
-3. zip を右クリック →「すべて展開」で展開します。
-4. 展開したフォルダの `セットアップ.bat` をダブルクリックします（1 回だけ）。
-   部品のダウンロードが終わると、フォルダの中に「PID調整アドバイザー」のショートカットができます。
-5. ショートカット（または `起動.bat`）で起動します。
+このページの右側の「Releases」から zip をダウンロードします。ふつうは **EXE 版**を選んでください。
+緑色の「Code」ボタンの「Download ZIP」と、「Source code (zip)」は開発用です。選ばないでください。
+
+| | EXE 版（おすすめ） | Python 版 |
+|---|---|---|
+| ファイル | `pid-tuning-advisor-v0.2.0-exe.zip` | `pid-tuning-advisor-v0.2.0.zip` |
+| 準備 | 展開するだけ | Python 3.14 のインストールと、セットアップ（数分） |
+
+1. zip を右クリック →「プロパティ」で、下のほうの「許可する」にチェックを入れて「OK」を押します。
+2. zip を右クリック →「すべて展開」で展開します。
+3. 起動します。
+   - **EXE 版**：展開したフォルダの `PID調整アドバイザー.exe` をダブルクリックします。`_internal` フォルダは EXE と同じ場所に置いたままにしてください。
+   - **Python 版**：`セットアップ.bat` をダブルクリックします（1 回だけ）。できたショートカット「PID調整アドバイザー」（または `起動.bat`）で起動します。
 
 ## 使い方（あらまし）
 
@@ -72,6 +78,7 @@ py -3.14 -m venv .venv
 
 - 設計書は `docs/superpowers/specs/`、実装計画は `docs/superpowers/plans/` にあります（Claude Code で開発した記録です）。
 - 取扱説明書の写真は `docs/manual/shoot.py`、PDF は `docs/manual/make_pdf.py` で作り直せます。
+- EXE 版は `EXE作成.bat` で `dist\PID調整アドバイザー` に作ります（`requirements-dev.txt` の PyInstaller を使います）。
 
 ## ライセンス
 
